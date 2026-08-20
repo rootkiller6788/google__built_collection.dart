@@ -364,11 +364,21 @@ void main() {
           isFalse);
     });
 
+    test('containsKey accepts a nullable key like Map', () {
+      expect(BuiltMap<int?, String>({1: '1'}).containsKey(null), isFalse);
+      expect(BuiltMap<int?, String>({null: '1'}).containsKey(null), isTrue);
+    });
+
     test('has a method like Map.containsValue', () {
       expect(BuiltMap<int, String>({1: '1', 2: '2', 3: '3'}).containsValue('3'),
           isTrue);
       expect(BuiltMap<int, String>({1: '1', 2: '2', 3: '3'}).containsValue('4'),
           isFalse);
+    });
+
+    test('containsValue accepts a nullable value like Map', () {
+      expect(BuiltMap<int, String?>({1: '1'}).containsValue(null), isFalse);
+      expect(BuiltMap<int, String?>({1: null}).containsValue(null), isTrue);
     });
 
     test('has a method like Map.forEach', () {

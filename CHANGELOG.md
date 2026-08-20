@@ -4,6 +4,8 @@
 
 - Remove `from` constructor from `BuiltList`.
 - Add `of` constructors to `ListBuilder` and `SetBuilder`.
+- `BuiltMap.containsKey` and `BuiltMap.containsValue` now accept a nullable
+  key or value, matching the `Map` interface.
 
 ## 5.1.1
 
